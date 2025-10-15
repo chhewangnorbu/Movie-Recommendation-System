@@ -9,9 +9,6 @@ This project uses **TF-IDF Vectorization** and **Cosine Similarity** to find and
 - [Features](#features)
 - [Technology Stack](#technology-stack)
 - [How It Works](#how-it-works-)
-- [Setup and Installation](#setup-and-installation)
-- [Author](#author)
-- [License](#license)
 
 ---
 
