@@ -1,35 +1,54 @@
-# Movie-Recommendation-System
-Personalized movie recommendation system using collaborative and content-based filtering.
+# 🎬 Movie Recommendation System
 
-A Movie Recommendation System that suggests movies to users based on their preferences using collaborative and/or content-based filtering techniques. The system leverages movie metadata and user ratings to provide personalized recommendations.
+A Python-based recommendation engine that suggests movies similar to the one you like.  
+This project uses **TF-IDF Vectorization** and **Cosine Similarity** to find and recommend movies with similar genres, cast, keywords, taglines, and directors.
 
-Features
+---
 
-User-Based Recommendations: Suggests movies based on similar users’ preferences (Collaborative Filtering).
+# 📑 Table of Content
+- [Features](#features)
+- [Technology Stack](#technology-stack)
+- [How It Works](#how-it-works-)
+- [Setup and Installation](#setup-and-installation)
+- [Author](#author)
+- [License](#license)
 
-Content-Based Recommendations: Suggests movies similar to ones the user liked, based on genres, cast, and keywords.
+---
 
-Hybrid Approach (optional): Combines collaborative and content-based methods for better accuracy.
+# ✨ Features
 
-Interactive Interface: Simple GUI or command-line interface for user inputs.
+**Content-Based Recommendation** — Suggests movies similar to a user’s favorite based on movie content like genres, cast, and keywords.  
 
-Data Visualization: Displays top-rated movies, popular genres, and recommendation results.
+**Text Vectorization with TF-IDF** — Converts movie metadata into numerical feature vectors.  
 
-Tech Stack
+**Cosine Similarity** — Measures similarity between movies to identify the closest matches.  
 
-Language: Python
+**Lightweight CLI Application** — Simple command-line interface that runs directly in your terminal.  
 
-Libraries: Pandas, NumPy, Scikit-learn, Surprise, Matplotlib/Seaborn
+**Highly Customizable** — You can easily modify the dataset or tweak the algorithm to improve recommendations.
 
-Dataset: MovieLens Dataset
- or similar
+---
 
-How It Works
+# 🧠 Technology Stack
 
-Load and preprocess the movie dataset and user ratings.
+### Backend:
+- **Python 3** — Core programming language.
+- **Pandas** — For handling and cleaning the movie dataset.
+- **NumPy** — For efficient numerical computation.
+- **Scikit-learn** — For TF-IDF vectorization and cosine similarity calculations.
+- **Difflib** — For fuzzy string matching of user input to movie titles.
 
-Apply filtering techniques (collaborative/content-based) to find similar movies or users.
+### Dataset:
+- **movies.csv** — A dataset containing movie metadata such as title, genres, cast, director, tagline, and keywords.
 
-Compute similarity scores and generate a ranked list of recommendations.
+---
 
-Display recommendations to the user.
+# ⚙️ How It Works 🧩
+
+The recommendation logic follows a **content-based filtering** approach:
+
+1. **Feature Selection** — Select key features: `genres`, `keywords`, `tagline`, `cast`, and `director`.  
+2. **Data Cleaning** — Replace missing values with empty strings and combine all features into a single text.  
+3. **Vectorization** — Convert combined text into feature vectors using TF-IDF (Term Frequency–Inverse Document Frequency).  
+4. **Similarity Computation** — Use **cosine similarity** to measure how close two movies are based on their vectorized features.  
+5. **Recommendation Generation** — When a user inputs a movie name, the system finds the closest title match and recommends the top similar movies.
